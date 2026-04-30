@@ -216,7 +216,6 @@ def _build_summary(results: dict) -> pd.DataFrame:
     df = pd.DataFrame(rows)
     return df.sort_values('R² Test', ascending=False).reset_index(drop=True)
 
-
 def load_best_model():
     """Charge le meilleur modèle sauvegardé."""
     path = os.path.join(MODELS_DIR, 'best_model.pkl')
