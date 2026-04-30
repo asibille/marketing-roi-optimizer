@@ -96,7 +96,7 @@ def train_and_evaluate(model, model_name, X_train, X_test, y_train, y_test) -> d
     """
     Entraîne un modèle et retourne ses métriques train/test + cross-validation.
     """
-    print(f'\n🔄 Entraînement : {model_name}...')
+    print(f'\n Entraînement : {model_name}...')
 
     # Entraînement
     model.fit(X_train, y_train)
@@ -126,8 +126,8 @@ def train_and_evaluate(model, model_name, X_train, X_test, y_train, y_test) -> d
         'y_pred_test' : y_pred_test.tolist()
     }
 
-    print(f'  ✅ Test  — MAE: {metrics_test["MAE"]:.4f} | RMSE: {metrics_test["RMSE"]:.4f} | R²: {metrics_test["R2"]:.4f}')
-    print(f'  📊 CV R² — {cv_r2.mean():.4f} ± {cv_r2.std():.4f}')
+    print(f'  Test  — MAE: {metrics_test["MAE"]:.4f} | RMSE: {metrics_test["RMSE"]:.4f} | R²: {metrics_test["R2"]:.4f}')
+    print(f'  CV R² — {cv_r2.mean():.4f} ± {cv_r2.std():.4f}')
 
     return result
 
@@ -163,7 +163,7 @@ def train_all_models(data_path=None):
         # Sauvegarde du modèle
         model_path = os.path.join(MODELS_DIR, f'{name}.pkl')
         joblib.dump(model, model_path)
-        print(f'  💾 Modèle sauvegardé → {model_path}')
+        print(f'  Modèle sauvegardé → {model_path}')
 
     # Sauvegarde des métriques en JSON
     metrics_export = {}
@@ -180,12 +180,12 @@ def train_all_models(data_path=None):
     metrics_path = os.path.join(REPORTS_DIR, 'metrics.json')
     with open(metrics_path, 'w') as f:
         json.dump(metrics_export, f, indent=2)
-    print(f'\n📄 Métriques sauvegardées → {metrics_path}')
+    print(f'\n Métriques sauvegardées → {metrics_path}')
 
     # Tableau récapitulatif
     summary = _build_summary(results)
     print('\n' + '='*65)
-    print('📊 COMPARAISON DES MODÈLES')
+    print('COMPARAISON DES MODÈLES')
     print('='*65)
     print(summary.to_string(index=False))
 
@@ -193,7 +193,7 @@ def train_all_models(data_path=None):
     best_name = summary.loc[summary['R² Test'].idxmax(), 'Modèle']
     best_model = trained_models[best_name]
     joblib.dump(best_model, os.path.join(MODELS_DIR, 'best_model.pkl'))
-    print(f'\n🏆 Meilleur modèle (R² Test) : {best_name}')
+    print(f'\nMeilleur modèle (R² Test) : {best_name}')
     print(f'   Sauvegardé → models/best_model.pkl')
 
     return results, trained_models, feature_names, X_test, y_test
