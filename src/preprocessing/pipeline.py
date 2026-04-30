@@ -90,7 +90,7 @@ def load_and_prepare_data(path: str = DATA_PATH, test_size: float = TEST_SIZE):
         preprocessor (ColumnTransformer fitté sur le train set uniquement)
         feature_names (liste des noms de colonnes après transformation)
     """
-    print('🔄 Chargement et nettoyage...')
+    print('Chargement et nettoyage...')
     df = load_data(path)
 
     # Séparation features / cible
@@ -106,7 +106,7 @@ def load_and_prepare_data(path: str = DATA_PATH, test_size: float = TEST_SIZE):
     print(f'  [split] Train : {X_train.shape[0]} | Test : {X_test.shape[0]}')
 
     # Construction et fit du preprocessor SUR LE TRAIN SET UNIQUEMENT
-    print('🔄 Fitting du preprocessor sur le train set...')
+    print('Fitting du preprocessor sur le train set...')
     preprocessor = build_preprocessor()
     preprocessor.fit(X_train)
 
@@ -133,7 +133,7 @@ def save_preprocessor(preprocessor, path: str = None):
         os.makedirs(ARTIFACTS_DIR, exist_ok=True)
         path = os.path.join(ARTIFACTS_DIR, 'preprocessor.pkl')
     joblib.dump(preprocessor, path)
-    print(f'💾 Preprocessor sauvegardé → {path}')
+    print(f'Preprocessor sauvegardé → {path}')
 
 
 def load_preprocessor(path: str = None):
