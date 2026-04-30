@@ -1,0 +1,66 @@
+{
+  "LinearRegression": {
+    "train": {
+      "MAE": 2.7179,
+      "RMSE": 6.5289,
+      "R2": 0.9951
+    },
+    "test": {
+      "MAE": 2.5858,
+      "RMSE": 5.8793,
+      "R2": 0.996
+    },
+    "cv_r2_mean": 0.995,
+    "cv_r2_std": 0.0026,
+    "cv_rmse_mean": 6.24,
+    "cv_rmse_std": 1.9917
+  },
+  "RandomForest": {
+    "train": {
+      "MAE": 1.1078,
+      "RMSE": 2.1848,
+      "R2": 0.9995
+    },
+    "test": {
+      "MAE": 2.734,
+      "RMSE": 3.8391,
+      "R2": 0.9983
+    },
+    "cv_r2_mean": 0.9964,
+    "cv_r2_std": 0.0021,
+    "cv_rmse_mean": 5.4074,
+    "cv_rmse_std": 1.5039
+  },
+  "XGBoost": {
+    "train": {
+      "MAE": 2.7007,
+      "RMSE": 4.4317,
+      "R2": 0.9977
+    },
+    "test": {
+      "MAE": 2.9662,
+      "RMSE": 4.3019,
+      "R2": 0.9979
+    },
+    "cv_r2_mean": 0.9956,
+    "cv_r2_std": 0.0014,
+    "cv_rmse_mean": 6.097,
+    "cv_rmse_std": 0.9635
+  },
+  "MLP": {
+    "train": {
+      "MAE": 3.4608,
+      "RMSE": 6.9389,
+      "R2": 0.9945
+    },
+    "test": {
+      "MAE": 3.3596,
+      "RMSE": 6.4914,
+      "R2": 0.9951
+    },
+    "cv_r2_mean": 0.9943,
+    "cv_r2_std": 0.0023,
+    "cv_rmse_mean": 6.8077,
+    "cv_rmse_std": 1.6199
+  }
+}
